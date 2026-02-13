@@ -228,7 +228,7 @@ body {
   <h1 class="page-title">实体百科目页</h1>
   <p class="intro">
     本维基为《Rooms》同人创作的实体设定百科，收录A系列及其他类别实体的详细信息，包括状态、类型、行为逻辑、核心机制等内容。所有设定为非官方创作，将持续更新完善。
-  </p >
+  </p>
 
   <!-- A60 实体 -->
   <div class="entity-card" id="A60">
@@ -259,7 +259,7 @@ body {
       </div>
       <div class="info-item">
         <span class="info-label">触发条件</span>
-        <span class="info-value">房间数量阈值</span>
+        <span class="info-value">随机生成</span>
       </div>
     </div>
   </div>
@@ -268,9 +268,9 @@ body {
   <div class="entity-card" id="A77">
     <div class="entity-content">
       <h2>A77</h2>
-      <p>A77 为开发中的追击类实体，移动逻辑已完善，具备克隆、门检测、玩家锁定等多层行为机制，威胁等级高于A60。</p >
+      <p>A77 为开发中的追击类实体，移动逻辑已完善，具备克隆、房间检测、玩家锁定等多层行为机制，威胁等级高于A60。</p >
       <p>实体首先克隆自身实例，经过短暂延迟后获取房间路径坐标，以高速模式移动至目标房间入口；若检测到门关闭则自动消失，门开启时继续推进并检测玩家。</p >
-      <p>当检测到玩家存在时，会向所有玩家发送信号，并生成击杀变体沿路径冲击；若处于小型房间且门关闭，将直接终止行动，未检测到玩家时会在两个房间范围内循环等待。</p >
+      <p>当检测到玩家存在时，会向所有玩家发送信号，并生成击杀变体沿路径冲击；若处于小型房间且门关闭，将直接终止行动，未检测到玩家时会在两个房间范围内往复移动。</p >
     </div>
     <div class="entity-info">
       <h4>A77</h4>
@@ -285,7 +285,7 @@ body {
       </div>
       <div class="info-item">
         <span class="info-label">核心行为</span>
-        <span class="info-value">克隆、高速移动、击杀变体</span>
+        <span class="info-value">检查房间，生成击杀变体</span>
       </div>
       <div class="info-item">
         <span class="info-label">威胁等级</span>
@@ -293,7 +293,7 @@ body {
       </div>
       <div class="info-item">
         <span class="info-label">完善进度</span>
-        <span class="info-value">移动逻辑100%</span>
+        <span class="info-value">移动逻辑100%，正在开发击杀逻辑</span>
       </div>
     </div>
   </div>
@@ -303,8 +303,8 @@ body {
     <div class="entity-content">
       <h2>A100</h2>
       <p>A100 为未启用的追击类实体，具备往返追击、隐蔽点标记与破坏等复杂行为，威胁等级较高。</p >
-      <p>实体从主房间的下级房间生成，以1房间/秒的速度追击玩家过往位置，会击杀未躲藏或开启手电的玩家，并标记存在玩家的隐蔽点。</p >
-      <p>抵达终点后高速返回主房间，返程中破坏所有标记点并击杀暴露玩家，最多执行3次往返，若储物柜数量不足则相应减少次数。</p >
+      <p>实体从主房间的下级房间生成，以1房间/秒的速度追击玩家过往位置，会击杀未躲藏或开启手电的玩家，并标记存在玩家的隐藏点。</p >
+      <p>抵达终点后高速返回主房间，返程中破坏所有被标记的隐藏点(这会强制玩家退出该躲藏点)并击杀未躲藏玩家，最多执行3次往返，若储物柜数量不足则相应减少往返次数。</p >
     </div>
     <div class="entity-info">
       <h4>A100</h4>
@@ -370,8 +370,8 @@ body {
   <div class="entity-card" id="A1">
     <div class="entity-content">
       <h2>A1</h2>
-      <p>A1 为未启用的机制等效实体，等同于游戏内 glitch 机制，无额外行为描述。</p >
-      <p>该实体仅作为机制映射存在，不具备独立行为逻辑，暂未启用。</p >
+      <p>A1 为未启用的机制等效实体，等同于DOORS游戏的glitch实体。</p >
+      <p>该实体仅作为机制映射存在，不具备特殊行为逻辑，暂未启用。</p >
     </div>
     <div class="entity-info">
       <h4>A1</h4>
@@ -382,10 +382,10 @@ body {
       </div>
       <div class="info-item">
         <span class="info-label">类型</span>
-        <span class="info-value">机制等效类</span>
+        <span class="info-value">机制类</span>
       </div>
       <div class="info-item">
-        <span class="info-label">等效机制</span>
+        <span class="info-label">等效实体</span>
         <span class="info-value">glitch 机制</span>
       </div>
       <div class="info-item">
@@ -399,8 +399,8 @@ body {
   <div class="entity-card" id="A2">
     <div class="entity-content">
       <h2>A2</h2>
-      <p>A2 为未启用的机制等效实体，等同于 Hide 或 R&D 中的 A50 实体，无额外行为描述。</p >
-      <p>该实体仅作为机制映射存在，不具备独立行为逻辑，暂未启用。</p >
+      <p>A2 为未启用的机制实体，等同于 Hide实体 或 R&D 中的 A50 实体。</p >
+      <p>该实体仅作为机制映射存在，不具备特殊行为逻辑，暂未启用。</p >
     </div>
     <div class="entity-info">
       <h4>A2</h4>
@@ -411,7 +411,7 @@ body {
       </div>
       <div class="info-item">
         <span class="info-label">类型</span>
-        <span class="info-value">机制等效类</span>
+        <span class="info-value">机制类</span>
       </div>
       <div class="info-item">
         <span class="info-label">等效实体</span>
@@ -424,12 +424,40 @@ body {
     </div>
   </div>
 
+    <!-- A10 实体 -->
+  <div class="entity-card" id="A10">
+    <div class="entity-content">
+      <h2>A10</h2>
+      <p>A10 为未启用的机制实体，等同于 R&D 中的 A10 实体。</p >
+      <p>该实体仅作为机制映射存在，不具备特殊行为逻辑，暂未启用。</p >
+    </div>
+    <div class="entity-info">
+      <h4>A10</h4>
+      <img src="imgs/placeholder.jpg" alt="A10" class="entity-image">
+      <div class="info-item">
+        <span class="info-label">状态</span>
+        <span class="info-value">⬜ 未启用</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">类型</span>
+        <span class="info-value">机制类</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">等效实体</span>
+        <span class="info-value">A10</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">行为描述</span>
+        <span class="info-value">无额外行为</span>
+      </div>
+    </div>
+  </div>
+
   <!-- A131 实体 -->
   <div class="entity-card" id="A131">
     <div class="entity-content">
       <h2>A131</h2>
-      <p>A131 为概念实体，暂无详细设定，仅作为概念存在。</p >
-      <p>该实体目前无状态、类型及行为逻辑描述，后续可能补充设定。</p >
+      <p>A131 为概念实体，暂无详细设定，仅作为概念存在。</p>
     </div>
     <div class="entity-info">
       <h4>A131</h4>
