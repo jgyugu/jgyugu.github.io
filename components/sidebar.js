@@ -1,7 +1,7 @@
 document.write(`
 <div class="sidebar">
-  <div class="wiki-title">Rooms 实体同人维基</div>
-  <h3>Rooms Wiki</h3>
+  <div class="wiki-title">rooms of loop维基</div>
+  <h3>rooms of loop Wiki</h3>
   <a href="../index.html">首页</a>
   <a href="a60.html">实体列表</a>
   <a href="#">房间设定</a>
