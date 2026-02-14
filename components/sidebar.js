@@ -14,7 +14,7 @@ document.write(`
   <a href="../pages/a1.html">A1（未启用）</a>
   <a href="../pages/a2.html">A2（未启用）</a>
   <a href="../pages/a10.html">A10（未启用）</a>
-  <a href="../pages/a131.html">A131（概念实体）</a>
+  <a href="../pages/a131.html">A131（未启用）</a>
   <h3>快速链接</h3>
   <a href="#">更新日志</a>
   <a href="#">维基规则</a>
