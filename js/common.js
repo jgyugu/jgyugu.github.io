@@ -1,11 +1,26 @@
 // js/common.js
 
+// 当前页面是否在 posts/ 目录下
+const IN_POSTS = window.location.pathname.includes('/posts/');
+// 相对根目录的前缀：首页是 './'，文章页是 '../'
+const ROOT = IN_POSTS ? '../' : './';
+
 const SITE = {
     name: 'ethan_648ha的博客',
     footer: '© 2026 · GitHub Pages 搭建',
     postsDir: 'posts/',            // 文章 HTML 所在目录
     postsJson: 'posts/posts.json'  // 文章清单
 };
+
+// 注入 favicon（若 HTML 里没有手写）
+function injectFavicon() {
+    if (document.querySelector('link[rel~="icon"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = ROOT + 'favicon.ico';
+    link.sizes = 'any';
+    document.head.appendChild(link);
+}
 
 // 渲染首页文章列表
 async function renderPosts() {
@@ -33,6 +48,9 @@ async function renderPosts() {
     }
 }
 
+// 尽早执行，别等 DOMContentLoaded
+injectFavicon();
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // 0. 渲染文章列表（仅首页）
@@ -58,9 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. 设置"返回首页"链接
     const backLink = document.querySelector('.back-link');
     if (backLink) {
-        const path = window.location.pathname;
-        if (path.includes('/posts/')) {
-            backLink.href = '../index.html';
-        }
+        backLink.href = ROOT + 'index.html';
     }
 });
