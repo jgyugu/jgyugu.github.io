@@ -100,6 +100,34 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* ===== 页脚图标（新增） ===== */
+footer .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+footer .footer-icon {
+    display: inline-flex;
+    align-items: center;
+    color: #86868b;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+footer .footer-icon:hover {
+    color: #1d1d1f;
+    text-decoration: none;   /* 覆盖 footer a:hover 的下划线 */
+    transform: translateY(-1px);
+}
+
+footer .footer-icon svg {
+    display: block;
+}
+/* ===== 页脚图标结束 ===== */
+
 /* ========== 文章页专属样式 ========== */
 .article-header {
     margin-bottom: 32px;
