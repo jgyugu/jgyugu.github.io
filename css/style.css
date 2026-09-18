@@ -126,6 +126,10 @@ footer .footer-icon:hover {
 footer .footer-icon svg {
     display: block;
 }
+
+footer .footer-icon[href*="bilibili"]:hover {
+    color: #fb7299;
+}
 /* ===== 页脚图标结束 ===== */
 
 /* ========== 文章页专属样式 ========== */
