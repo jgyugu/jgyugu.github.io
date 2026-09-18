@@ -3,7 +3,8 @@
 const SITE = {
     name: 'ethan_648ha的博客',
     footer: '© 2026 · GitHub Pages 搭建',
-    postsDir: 'posts/'   // 文章目录（相对根目录）
+    postsDir: 'posts/',            // 文章 HTML 所在目录
+    postsJson: 'posts/posts.json'  // 文章清单
 };
 
 // 渲染首页文章列表
@@ -12,7 +13,7 @@ async function renderPosts() {
     if (!listEl) return;   // 文章页没有这个元素，直接跳过
 
     try {
-        const res = await fetch('posts.json');
+        const res = await fetch(SITE.postsJson);
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
 
@@ -27,7 +28,7 @@ async function renderPosts() {
         `).join('');
 
     } catch (err) {
-        listEl.innerHTML = '<li>文章列表加载失败，请检查 posts.json</li>';
+        listEl.innerHTML = '<li>文章列表加载失败，请检查 posts/posts.json</li>';
         console.error('加载文章列表失败：', err);
     }
 }
